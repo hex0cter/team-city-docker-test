@@ -4,6 +4,10 @@ services:
   decrypt:
     image: alpine:latest
     user: ${USER_ID}
+    entrypoint:
+      - sh
+      - "-xc"
+      - "sleep 30"
     environment:
       GPG_KEY:
     working_dir: /usr/src/frontend
